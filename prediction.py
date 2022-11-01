@@ -14,5 +14,3 @@ def predict(data):
     result = dictionary[prediction[0]]
 
     return {'prediction': result}
-
-predict([0.3,0.2, 9.8, 0.009, -0.13, -0.01, 0.14])
