@@ -9,7 +9,6 @@ cors = CORS(application)
 application.config['CORS_HEADERS'] = 'Content-Type'
 
 @application.route('/')
-@cross_origin()
 @application.route('/status')
 def status():
     return jsonify({'status': 'ok'})
