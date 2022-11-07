@@ -1,11 +1,15 @@
 import json
 from flask import Flask, jsonify, request
 from prediction import predict
+from flask_cors import CORS, cross_origin
 
 application = Flask(__name__)
 
+cors = CORS(application)
+application.config['CORS_HEADERS'] = 'Content-Type'
 
 @application.route('/')
+@cross_origin()
 @application.route('/status')
 def status():
     return jsonify({'status': 'ok'})
