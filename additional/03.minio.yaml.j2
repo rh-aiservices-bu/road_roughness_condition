@@ -3,7 +3,6 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: minio-pvc
-  # namespace: minio
 spec:
   accessModes:
     - ReadWriteOnce
@@ -16,7 +15,6 @@ kind: Secret
 apiVersion: v1
 metadata:
   name: minio-secret
-  # namespace: minio
 stringData:
   accesskey: minio
   secretkey: minio123
@@ -25,7 +23,6 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: minio
-  # namespace: minio
 spec:
   replicas: 1
   selector:
@@ -126,7 +123,6 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: minio
-  # namespace: minio
 spec:
   to:
     kind: Service
@@ -138,6 +134,3 @@ spec:
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
-
-
-
